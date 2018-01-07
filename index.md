@@ -1,17 +1,13 @@
 ## Building a Crypto-Currency Miner
 
 <p align="center">
-  <img src="https://imgur.com/NpI7H8y" alt="CryptoMiner"/>
-</p>
-
-<p align="center">
-  <img src="https://github.com/chris-stephens/cryptominer/master/crypto1.jpg?raw=true" alt="Crypto"/>
+  <img src="https://github.com/chris-stephens/cryptominer/blob/master/crypto1.jpg?raw=true" alt="Crypto"/>
 </p>
 
 ### Background
 I built a crypto-currency miner in late 2013 and was able to mine some LiteCoin which ended up having a small value at the time.  I decided to not mine BitCoin because the mining network difficulty had risen beyond being profitable for GPU hardware (only custom ASICs were profitable at the time).
 
-In late 2017, I decided to get back into cryptocurrency and build another mining machine.  My 2013 experiment had 4 AMD GPU's that were very power-hungry, loud, and generated a ton of heat ([pic](https://imgur.com/4yjGuHI)).  My goal this time was to build a condensed desktop miner that didn't generate too much noise or heat, so I decided to go with a single GPU setup and mini-ITX motherboard/case.  
+In late 2017, I decided to get back into cryptocurrency and build another mining machine.  My 2013 experiment had 4 AMD GPU's that were very power-hungry, loud, and generated a ton of heat ([pic](https://github.com/chris-stephens/cryptominer/blob/master/crypto2.jpg)).  My goal this time was to build a condensed desktop miner that didn't generate too much noise or heat, so I decided to go with a single GPU setup and mini-ITX motherboard/case.  
 
 ### Parts List
 
