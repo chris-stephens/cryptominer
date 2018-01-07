@@ -1,6 +1,8 @@
 ## Building a Crypto-Currency Miner
 
-[!CryptoMiner](https://imgur.com/NpI7H8y)
+<p align="center">
+  <img src="https://imgur.com/NpI7H8y" alt="CryptoMiner"/>
+</p>
 
 ### Background
 I built a crypto-currency miner in late 2013 and was able to mine some LiteCoin which ended up having a small value at the time.  I decided to not mine BitCoin because the mining network difficulty had risen beyond being profitable for GPU hardware (only custom ASICs were profitable at the time).
