@@ -3,7 +3,7 @@
 ### Background
 I built a crypto-currency miner in late 2013 and was able to mine some LiteCoin which ended up having a small value at the time.  I decided to not mine BitCoin because the mining network difficulty had risen beyond being profitable for GPU hardware (only custom ASICs were profitable at the time).
 
-In late 2017, I decided to get back into cryptocurrency and build another mining machine.  My 2013 experiment had 4 AMD GPU's that were very power-hungry, loud, and generated a ton of heat ([pic](https://imgur.com/4yjGuHI).  My goal this time was to build a condensed desktop miner that didn't generate too much noise or heat, so I decided to go with a single GPU setup and mini-ITX motherboard/case.  
+In late 2017, I decided to get back into cryptocurrency and build another mining machine.  My 2013 experiment had 4 AMD GPU's that were very power-hungry, loud, and generated a ton of heat ([pic](https://imgur.com/4yjGuHI)).  My goal this time was to build a condensed desktop miner that didn't generate too much noise or heat, so I decided to go with a single GPU setup and mini-ITX motherboard/case.  
 
 ### Parts List
 
@@ -87,6 +87,9 @@ Once you've started mining, you'll want to check the console output for any erro
 ```
 
 Additional configurations for your specific card can be found here - https://www.xmrstak.com/.
+
+#### Overclocking
+You can also overclock your GPU to increase overall hashrate.  This comes at a cost of increased power utilization, heat, and wear on your GPU.  For AMD cards, [MSI Afterburner](https://www.msi.com/page/afterburner) is probably the best tool.  For NVidia, you can use [EVGA Precision OC](https://www.evga.com/precisionxoc/), among others.  **Be aware that you can possibly damage your card or have errors during hashing.**
 
 #### Auto-Start
 Your operating system should be set to auto-login after reboot, however the **xmr-stak** client will still need to start.  On Windows 10, this can be done by placing a shortcut to the executable in the **shell:startup** folder.  After doing so, reboot the machine to ensure it starts automatically.
