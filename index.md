@@ -102,6 +102,3 @@ Your operating system should be set to auto-login after reboot, however the **xm
 Once you start using the **SupportXMR** mining pool, you can check the balance of your account on the [Dashboard](https://supportxmr.com/#/dashboard).  No login is required, you can simply paste your Monero wallet address into the bottom half of the page.  Once your **Total Due** reaches **0.03**, it will be automatically sent to your wallet.
 
 You can create an account within the SupportXMR portal by changing your pool password in the **C:\xmr-stak-win64\config.txt** configuration file to "_MinerName:your@email.com_" (replace with your email address).  After mining for a few minutes, you will then be able to login and change your payout threshold.
-
-
-[Link](url) and ![Image](src)
