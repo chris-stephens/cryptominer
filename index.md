@@ -24,7 +24,7 @@ Total cost for me was about $960 since I already had the SSD and memory from an 
 ### Build Process
 
 #### Power On & BIOS Settings
-Once you have all the parts, it's time to put it together.  If you aren't familiar with building a computer, do some quick research online or on Youtube.  Once everything is assembled, it's time to install the OS.  Keep in mind that some BIOS will not allow your onboard GPU to function with an add-on PCIe GPU installed, so if there is no output to your monitor be sure to use the add-on GPU (you can fine-tune the preference in the BIOS settings).  You will also want to configure the BIOS options to power on the system after an outage.  This will ensure that mining continues even if you are not around to start it up.
+Once you have all the parts, it's time to put it together.  If you aren't familiar with building a computer, do some quick research online or on Youtube.  Keep in mind that some BIOS will not allow your onboard GPU to function with an add-on PCIe GPU installed, so if there is no output to your monitor be sure to use the add-on GPU (you can fine-tune the preference in the BIOS settings).  You will also want to configure the BIOS options to power on the system after an outage.  This will ensure that mining continues even if you are not around to start it up.
 
 #### OS Selection
 I would suggest going with a Windows OS for a mining machine, as the driver support is typically better than Linux.  Unfortunately, the downfall is that Windows 10 is bundled with a bunch of extra components.  You could try using Microsoft Server 2012 R2 or 2016, but I haven't tested that out yet.  **Make sure the OS is 64-bit.**
@@ -33,15 +33,15 @@ I would suggest going with a Windows OS for a mining machine, as the driver supp
 After installing the operating system, you'll want to configure the following:
 - Setup your account to auto-login (run **Netplwiz** and uncheck the "_Users must enter a password to use this computer_" option).
 - Install [Visual Studio 2017 Redistributable 2017 x64 Package](https://aka.ms/vs/15/release/VC_redist.x64.exe).
-- Disable User Account Control
+- Disable **User Account Control**
 - Install the latest Windows Updates and System Drivers (download from Intel/AMD).
 - Install the latest GPU Drivers [NVIDIA](http://www.nvidia.com/Download/index.aspx) or [AMD](http://support.amd.com/en-us/download).
 
 ### Mining Software Installation
-Depending on what you want to mine, the steps may be a bit different here.
+_(Depending on what you want to mine, the steps may be a bit different here.)_
 
 #### Monero
-The first thing you need to do is setup a wallet address.  This can be done by downloading the [Monero Client](https://getmonero.org/downloads/) and taking note of your wallet receiving address.  You should also setup a password for your wallet and store it in a safe place.  I would suggest not installing the Monero Client on your mining machine (you want that system to be as minimalist as possible).
+The first thing you need to do is setup a wallet address.  This can be done by downloading the [Monero Client](https://getmonero.org/downloads/) and taking note of your wallet receiving address.  You should also setup a password for your wallet and store it in a safe place.  I would suggest not installing the Monero Client on your mining machine (you want that system to be as minimal as possible).
 
 #### Pool Selection
 After setting up a wallet address, you need to select a mining pool to use.  A mining pool allows multiple miners to pool their resources and computing power to more efficiently mine for cryptocurrency.  Because the difficulty of mining a single block generally exceeds what a single GPU can do on it's own, the only way to actually earn value is to join a pool.  I use [SupportXMR](https://supportxmr.com/) in this example, but may others are also available.  You do not need to create an account within the pool, as all payouts will come to your Monero Receiving address.
