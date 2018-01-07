@@ -13,7 +13,7 @@ In late 2017, I decided to get back into cryptocurrency and build another mining
 - [EVGA 750 GQ, 80+ GOLD 750W Power Supply](http://amzn.to/2D4ZQ3t) - The GPU required about 600W to be safe, so I went with this gold-efficiency PSU.
 - [Samsung 850 EVO 500GB SSD](http://amzn.to/2D2CziG) - You could probably get by with a smaller drive, but this worked for me.  I wanted to make sure I had enough capacity to run a full BitCoin node in the future (~160GB right now).
 - [Corsair Vengeance Blue 16 GB (2x8 GB) DDR3](http://amzn.to/2m6ii3M) - Another component that probably could have been cheaper.  I already had this, so I decided to use it.
-- [Kill A Watt Electricity Usage Monitor](http://amzn.to/2CNkR51) - Optional eletrical outlet usage monitor.  This will allow you to calculate how much electricity your mining rig will use.
+- [Kill A Watt Electricity Usage Monitor](http://amzn.to/2CNkR51) - Eletrical outlet usage monitor (optional).  This will allow you to calculate how much electricity your mining rig will use.
 
 Total cost for me was about $960 since I already had the SSD and memory from an old project.  You could probably cut some costs with a cheaper power supply, however the $80 CPU/motherboard combination in the list above can't be beat.  Keep in mind that a powerful CPU isn't important, since the GPU will be doing most of the work.
 
@@ -33,7 +33,92 @@ After installing the operating system, you'll want to configure the following:
 - Install the latest Windows Updates and System Drivers (download from Intel/AMD).
 - Install the latest GPU Drivers [NVIDIA](http://www.nvidia.com/Download/index.aspx) or [AMD](http://support.amd.com/en-us/download).
 
-####
+### Mining Software Installation
+Depending on what you want to mine, the steps may be a bit different here.
+
+#### Monero
+The first thing you need to do is setup a wallet address.  This can be done by downloading the [Monero Client](https://getmonero.org/downloads/) and taking note of your wallet receiving address.  You should also setup a password for your wallet and store it in a safe place.  I would suggest not installing the Monero Client on your mining machine (you want that system to be as minimalist as possible).
+
+#### Pool Selection
+After setting up a wallet address, you need to select a mining pool to use.  A mining pool allows multiple miners to pool their resources and computing power to more efficiently mine for cryptocurrency.  Because the difficulty of mining a single block generally exceeds what a single GPU can do on it's own, the only way to actually earn value is to join a pool.  I use [SupportXMR](https://supportxmr.com/) in this example, but may others are also available.  You do not need to create an account within the pool, as all payouts will come to your Monero Receiving address.
+
+#### Mining Software
+I would suggest using [xmr-stak](https://github.com/fireice-uk/xmr-stak).  You can download the [latest Windows release](https://github.com/fireice-uk/xmr-stak/releases) and place it in a folder on your mining machine's hard drive (like **C:\xmr-stak-win64**).  Launch a command prompt and run the binary from that folder (**xmr-stak.exe**).  You will be prompted with a few questions, which you should answer (example below, be sure to use your wallet address):
+
+```
+c:\xmr-stak-win64\xmr-stak.exe
+Please enter:
+- Currency: 'monero' or 'aeon'
+monero
+- Pool address: e.g. pool.usxmrpool.com:3333
+de03.supportxmr.com:7777
+- Username (wallet address or pool login):
+42TZm91mijNa19ME7rNcH7LUYEUvEHQqHQHst3u3Xkv15ftNHEfefzPRXAvygdcCusST2jVNcWTrVZU8dfAMZSBB8UM4dNj
+- Password (mostly empty or x):
+x
+- Does this pool port support TLS/SSL? Use no if unknown. (y/N)
+N
+- Do you want to use nicehash on this pool? (y/n)
+n
+- Do you want to use multiple pools? (y/n)
+n
+Configuration stored in file 'config.txt'
+```
+
+After entering this information, the mining client will start.
+
+### Troubleshooting & Tuning
+
+Once you've started mining, you'll want to check the console output for any errors.  In my situation, I immediately encountered a CUDA ERROR which typically means that something is wrong with the GPU operation.  This can occur if your GPU is overclocked or the settings are incorrect.
+
+```
+-------------------------------------------------------------------
+xmr-stak 2.2.0 c4400d19
+
+Brought to you by fireice_uk and psychocrypt under GPLv3.
+Based on CPU mining code by wolf9466 (heavily optimized by fireice_uk).
+Based on NVIDIA mining code by KlausT and psychocrypt.
+Based on OpenCL mining code by wolf9466.
+
+Configurable dev donation level is set to 2.0%
+
+You can use following keys to display reports:
+'h' - hashrate
+'r' - results
+'c' - connection
+-------------------------------------------------------------------
+[2018-01-07 10:43:05] : Start mining: MONERO
+[2018-01-07 10:43:06] : NVIDIA: GPU configuration stored in file 'nvidia.txt'
+[2018-01-07 10:43:06] : Starting NVIDIA GPU thread 0, no affinity.
+[2018-01-07 10:43:11] : Found AMD platform index id = 0, name = Advanced Micro Devices, Inc.
+[2018-01-07 10:43:12] : WARNING: CL_DEVICE_NOT_FOUND when calling clGetDeviceIDs for of devices.
+[2018-01-07 10:43:12] : WARNING: No AMD device found.
+[2018-01-07 10:43:12] : WARNING: backend AMD disabled.
+[2018-01-07 10:43:12] : CPU configuration stored in file 'cpu.txt'
+[2018-01-07 10:43:12] : Starting 1x thread, affinity: 0.
+[2018-01-07 10:43:12] : hwloc: memory pinned
+[2018-01-07 10:43:12] : Starting 1x thread, affinity: 1.
+[2018-01-07 10:43:12] : hwloc: memory pinned
+[2018-01-07 10:43:12] : Starting 1x thread, affinity: 2.
+[2018-01-07 10:43:12] : hwloc: memory pinned
+[2018-01-07 10:43:12] : Starting 1x thread, affinity: 3.
+[2018-01-07 10:43:12] : hwloc: memory pinned
+[2018-01-07 10:43:12] : Fast-connecting to de03.supportxmr.com:7777 pool ...
+[2018-01-07 10:43:12] : Pool de03.supportxmr.com:7777 connected. Logging in...
+[2018-01-07 10:43:12] : Difficulty changed. Now: 25000.
+[2018-01-07 10:43:12] : Pool logged in.
+[2018-01-07 10:43:23] : Difficulty changed. Now: 25000.
+[2018-01-07 10:43:23] : New block detected.
+[CUDA
+
+
+
+
+```
+
+
+
+
 
 
 You can use the [editor on GitHub](https://github.com/chris-stephens/cryptominer/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
