@@ -99,6 +99,6 @@ You can also overclock your GPU to increase overall hashrate.  This comes at a c
 Your operating system should be set to auto-login after reboot, however the **xmr-stak** client will still need to start.  On Windows 10, this can be done by placing a shortcut to the executable in the **shell:startup** folder.  After doing so, reboot the machine to ensure it starts automatically.
 
 ### Payouts
-Once you start using the **SupportXMR** mining pool, you can check the balance of your account on the [Dashboard](https://supportxmr.com/#/dashboard).  No login is required, you can simply paste your Monero wallet address into the bottom half of the page.  Once your **Total Due** reaches **0.03**, it will be automatically sent to your wallet.
+Once you start using the **SupportXMR** mining pool, you can check the balance of your account on the [SupportXMR Dashboard](https://supportxmr.com/#/dashboard).  No login is required, you can simply paste your Monero wallet address into the bottom half of the page.  Once your **Total Due** reaches **0.03**, it will be automatically sent to your wallet.
 
 You can create an account within the SupportXMR portal by changing your pool password in the **C:\xmr-stak-win64\config.txt** configuration file to "_MinerName:your@email.com_" (replace with your email address).  After mining for a few minutes, you will then be able to login and change your payout threshold.
